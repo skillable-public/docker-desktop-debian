@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+#exec s6-setuidgid user \
+#  websockify -D --web=/usr/share/novnc/ --cert=/home/user/cert.pem 6080 localhost:5901
+
+websockify -D --web=/usr/share/novnc/ 6900 localhost:5901

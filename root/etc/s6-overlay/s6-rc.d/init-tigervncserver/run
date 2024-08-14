@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+#exec s6-setuidgid user \
+#  printf "Pa55w.rd\nPa55w.rd\n\n" | vncpasswd
+
+runuser -l user -c \
+'printf "Pa55w.rd\nPa55w.rd\n\n" | vncpasswd'

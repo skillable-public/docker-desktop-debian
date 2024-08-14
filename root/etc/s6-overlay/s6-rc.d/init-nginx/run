@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# nginx Path
+NGINX_CONFIG=/etc/nginx/sites-available/default
+
+SFOLDER="${SUBFOLDER:-/}"
+
+# modify nginx config
+cp /defaults/default.conf ${NGINX_CONFIG}
+sed -i "s|SUBFOLDER|$SFOLDER|g" ${NGINX_CONFIG}

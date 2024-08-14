@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+# create self signed cert
+#if [ ! -f "/home/user/cert.pem" ]; then
+# openssl req -new rsa:3072 -x509 \
+#    -days 3650 -nodes \
+#    -out /home/user/cert.pem \
+#    -keyout /home/user/cert.key \
+#    -batch
+#  chmod 600 /home/user/cert.key
+#fi
+
+runuser -l user -c \
+'openssl req -x509 -nodes -newkey rsa:3072 -keyout /home/user/cert.pem -out /home/user/cert.pem -days 3650 -batch'

@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+# novnc/ui.js Path
+UI_JS=/usr/share/novnc/app/ui.js
+
+# modify ui.js
+OLD_UI_CONNECT="WebUtil.getConfigVar\('autoconnect', .*\);"
+NEW_UI_CONNECT="WebUtil.getConfigVar('autoconnect', true);"
+sed -Ei "s|$OLD_UI_CONNECT|$NEW_UI_CONNECT|g" ${UI_JS}
+
+OLD_RESIZE_SETTING="UI.initSetting\('resize', '.*'\);"
+NEW_RESIZE_SETTING="UI.initSetting('resize', 'remote');"
+sed -Ei "s|$OLD_RESIZE_SETTING|$NEW_RESIZE_SETTING|g" ${UI_JS}
+
+OLD_PATH_CFG="UI.initSetting\('path',.*\);"
+NEW_PATH_CFG="UI.initSetting('path', window.location.pathname.replace(/[^/]*$/, '').substring(1) + 'websockify');"
+sed -Ei "s|$OLD_PATH_CFG|$NEW_PATH_CFG|g" ${UI_JS}
+
+OLD_RECONNECT_SETTING="UI.initSetting\('reconnect', .*\);"
+NEW_RECONNECT_SETTING="UI.initSetting('reconnect', true);"
+sed -Ei "s|$OLD_RECONNECT_SETTING|$NEW_RECONNECT_SETTING|g" ${UI_JS}
+
+if [[ ! -f /usr/share/novnc/index.html ]]; then
+  cd /usr/share/novnc
+  ln -s vnc.html index.html
+fi

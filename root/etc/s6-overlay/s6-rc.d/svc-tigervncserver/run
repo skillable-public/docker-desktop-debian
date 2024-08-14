@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+#exec s6-setuidgid user \
+#  tigervncserver -xstartup /usr/bin/plasma_session
+
+runuser -l user -c \
+'tigervncserver -xstartup /usr/bin/plasma_session'
