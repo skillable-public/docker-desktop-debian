@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/with-contenv bash
 
 #exec s6-setuidgid user \
 #  printf "Pa55w.rd\nPa55w.rd\n\n" | vncpasswd

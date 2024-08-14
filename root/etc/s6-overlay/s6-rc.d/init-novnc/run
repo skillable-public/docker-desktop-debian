@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/with-contenv bash
 
 # novnc/ui.js Path
 UI_JS=/usr/share/novnc/app/ui.js

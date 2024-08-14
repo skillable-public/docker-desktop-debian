@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/with-contenv bash
 
 # create self signed cert
 #if [ ! -f "/home/user/cert.pem" ]; then

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/with-contenv bash
 
 #exec s6-setuidgid user \
 #  tigervncserver -xstartup /usr/bin/plasma_session

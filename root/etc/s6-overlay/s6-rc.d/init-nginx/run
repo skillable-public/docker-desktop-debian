@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/with-contenv bash
 
 # nginx Path
 NGINX_CONFIG=/etc/nginx/sites-available/default
