@@ -1,4 +1,4 @@
-name: Build and Push docker-desktop-ubuntu Image to 
+name: Build and Push docker-desktop-ubuntu Image to ghcr 
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/docker-desktop-debian
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build:
@@ -36,5 +36,4 @@ jobs:
       with:
         push: ${{ github.event_name == 'push' }}
         tags: |
-          ${{ env.REGISTORY }}/${{ github.repository }}:latest
-
+          ${{ env.REGISTRY }}/${{ github.repository }}:latest
